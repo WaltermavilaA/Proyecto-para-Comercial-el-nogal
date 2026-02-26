@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/nogal_background">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="4dp"
+        android:title="@string/pedido_detalle_titulo"
+        app:titleTextColor="@color/black" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/tvNumeroPedido"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        tools:text="PED-20240101-0001" />
+
+                    <TextView
+                        android:id="@+id/tvFechaPedido"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textColor="#7A7A7A"
+                        android:textSize="14sp"
+                        tools:text="05 ene 2025" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipEstado"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:clickable="false"
+                        android:focusable="false"
+                        tools:text="En camino" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/detalle_codigo_verificacion"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvCodigoVerificacion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="monospace"
+                        android:textColor="#1E88E5"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        tools:text="376665" />
+
+                    <TextView
+                        android:id="@+id/tvCodigoInstruccion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="@string/detalle_codigo_instruccion"
+                        android:textColor="#7A7A7A"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/tvTimelineTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="@string/detalle_timeline_titulo"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/timelineContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp"
+                android:background="@color/white"
+                android:layout_marginBottom="16dp"
+                android:elevation="2dp"
+                android:paddingBottom="4dp"
+                android:paddingTop="4dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:clipToPadding="false">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/step1Circle"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:background="@drawable/bg_timeline_circle_inactive" />
+
+                    <TextView
+                        android:id="@+id/step1Label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:text="@string/estado_en_preparacion"
+                        android:textColor="#7A7A7A" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/line1"
+                    android:layout_width="2dp"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="#D8D8D8" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/step2Circle"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:background="@drawable/bg_timeline_circle_inactive" />
+
+                    <TextView
+                        android:id="@+id/step2Label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:text="@string/estado_procesando"
+                        android:textColor="#7A7A7A" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/line2"
+                    android:layout_width="2dp"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="#D8D8D8" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/step3Circle"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:background="@drawable/bg_timeline_circle_inactive" />
+
+                    <TextView
+                        android:id="@+id/step3Label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:text="@string/estado_en_camino"
+                        android:textColor="#7A7A7A" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/line3"
+                    android:layout_width="2dp"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:background="#D8D8D8" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/step4Circle"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:background="@drawable/bg_timeline_circle_inactive" />
+
+                    <TextView
+                        android:id="@+id/step4Label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:text="@string/estado_finalizado"
+                        android:textColor="#7A7A7A" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/detalle_direccion_envio"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvNombreReceptor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        tools:text="Juan Lopez" />
+
+                    <TextView
+                        android:id="@+id/tvDireccionEnvio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textColor="#7A7A7A"
+                        tools:text="Av. Siempre Viva 742, Lima" />
+
+                    <TextView
+                        android:id="@+id/tvTelefonoContacto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textColor="#7A7A7A"
+                        tools:text="Tel: 951326987" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/detalle_metodo_pago"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvMetodoPago"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textColor="#7A7A7A"
+                        tools:text="Tarjeta VISA •••• 1234" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/detalle_productos"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:id="@+id/productsContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="12dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/detalle_costos"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/detalle_subtotal"
+                            android:textColor="#7A7A7A" />
+                        <TextView
+                            android:id="@+id/tvSubtotal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            tools:text="S/ 300.00" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/detalle_envio"
+                            android:textColor="#7A7A7A" />
+                        <TextView
+                            android:id="@+id/tvEnvio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            tools:text="S/ 20.00" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:paddingStart="4dp"
+                        android:paddingEnd="4dp">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/detalle_total"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/tvTotal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            tools:text="S/ 320.00" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

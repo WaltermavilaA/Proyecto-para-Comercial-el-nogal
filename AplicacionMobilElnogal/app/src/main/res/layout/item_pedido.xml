@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="2dp"
+    app:strokeColor="#EEEEEE"
+    app:strokeWidth="1dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvNumeroPedido"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/chipEstado"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="PED-20240101-0001" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipEstado"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:focusable="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="En camino" />
+
+        <TextView
+            android:id="@+id/tvFecha"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="#7A7A7A"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvNumeroPedido"
+            tools:text="05 ene 2025" />
+
+        <TextView
+            android:id="@+id/tvTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvFecha"
+            tools:text="S/ 350.00" />
+
+        <TextView
+            android:id="@+id/tvMetodoPago"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="#7A7A7A"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTotal"
+            tools:text="Visa •••• 9070" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

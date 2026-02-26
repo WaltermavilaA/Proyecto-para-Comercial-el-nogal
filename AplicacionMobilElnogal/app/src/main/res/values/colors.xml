@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="nogal_primary">#0F6B45</color>
+    <color name="nogal_secondary">#F4A01C</color>
+    <color name="nogal_background">#F5F5F5</color>
+    <color name="ic_launcher_background">#FFFFFFFF</color>
+    <color name="estado_en_preparacion">#FDD835</color>
+    <color name="estado_procesando">#FB8C00</color>
+    <color name="estado_en_camino">#1E88E5</color>
+    <color name="estado_finalizado">#43A047</color>
+    <color name="estado_cancelado">#E53935</color>
+</resources>
